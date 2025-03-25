@@ -5,72 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stride Bionics</title>
   <style>
+    :root {
+      --primary: #0a192f;
+      --accent: #1f2937;
+      --highlight: #3b82f6;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
     }
 
     header {
-      background-color: #003366;
-      color: #fff;
+      background-color: var(--primary);
+      color: var(--white);
       padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: var(--white);
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     .hero {
-      background: #e0f2ff;
-      padding: 60px 40px;
-      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background-color: var(--white);
+    }
+
+    .hero-text {
+      flex: 1;
+      padding: 20px;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+    }
+
+    .hero img {
+      max-width: 400px;
+      border-radius: 12px;
+      margin: 20px;
     }
 
     .section {
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
+      max-width: 960px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
 
     .card {
-      background: #fff;
+      background: var(--white);
       padding: 25px;
       margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
     .disclaimer {
-      font-size: 0.9em;
       color: red;
-      margin-top: 10px;
       font-weight: bold;
+      font-size: 0.9rem;
+      margin-top: 15px;
     }
 
     footer {
-      background: #003366;
-      color: white;
+      background: var(--primary);
+      color: var(--white);
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 30px 20px;
     }
 
-    h1, h2 {
-      color: #003366;
+    a {
+      color: var(--highlight);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Stride Bionics</h1>
+    <h2>Stride Bionics</h2>
     <nav>
       <a href="#about">About</a>
       <a href="#testimonials">Testimonials</a>
@@ -80,17 +131,20 @@
   </header>
 
   <section class="hero">
-    <h2>Helping Stroke Survivors Walk Independently</h2>
-    <p>The Strider is a next-gen robotic exoskeleton that aims to enable safe, unsupervised walking in the real world.</p>
-    <p><strong>Currently under development. This device is NOT FDA cleared and cannot be sold or marketed until FDA clearance is granted.</strong></p>
+    <div class="hero-text">
+      <h1>Helping Stroke Survivors Walk Independently</h1>
+      <p>Strider is a powered exoskeleton built for real-world independence — minimal, adaptive, and designed for home and community use.</p>
+      <p class="disclaimer">This device is not FDA cleared and may not be sold or marketed until authorized by the FDA.</p>
+    </div>
+    <img src="stride-ankle-foot-orthosis.png" alt="Stride Bionics ankle-foot orthosis"/>
   </section>
 
   <section class="section" id="about">
-    <h2>About Stride Bionics</h2>
+    <h2>About the Strider</h2>
     <div class="card">
-      <p>The Strider is a powered lower-limb exoskeleton designed specifically for stroke rehabilitation. Unlike traditional rehab robots that require a therapist or caregiver, Strider is being designed for safe, independent use at home or in the community.</p>
-      <p>Our system uses adaptive feedback control and real-time safety monitoring to help users walk again with confidence - no upper limb power, no bulky cables, no clinical tethering.</p>
-      <p class="disclaimer">This device is not FDA cleared and is not available for sale or clinical use.</p>
+      <p>The Strider is a lightweight, wearable robotic device that provides powered assistance to the lower limbs for stroke survivors. Unlike rehab clinic systems, Strider is designed for unsupervised use with built-in fall detection, self-balancing control, and a user-friendly setup app.</p>
+      <p>No bulky frame. No upper limb motors. Just walking — made possible.</p>
+      <p class="disclaimer">This product is under development and has not been cleared by the FDA.</p>
     </div>
   </section>
 
@@ -99,53 +153,53 @@
 
     <div class="card">
       <p><strong>Michael, age 63 (stroke survivor):</strong><br/>
-        "I've tried exoskeletons in the clinic, but they always required someone to be with me. Strider's promise of independence is what really gives me hope."
+        "I’ve tried clinic exoskeletons, but they always required a therapist nearby. The Strider is the first one that makes me think I could walk on my own again."
       </p>
     </div>
 
     <div class="card">
       <p><strong>Dr. Lisa Tran, PT, DPT:</strong><br/>
-        "The Strider could be a game-changer for outpatient care. Patients want to regain control outside the clinic - this is the first concept I've seen that's designed with that goal from day one."
+        "Patients want to reclaim independence. This system makes unsupervised, real-world use feel possible for the first time."
       </p>
     </div>
 
-    <p class="disclaimer">The Strider device has not been FDA cleared and is not authorized for clinical or commercial use.</p>
+    <p class="disclaimer">The Strider is not FDA cleared and is not available for commercial or clinical use.</p>
   </section>
 
   <section class="section" id="pricing">
-    <h2>Pricing Models We Are Testing</h2>
+    <h2>Pricing Models We Are Exploring</h2>
 
     <div class="card">
-      <h3>Model 1: Robotics-as-a-Service (RaaS)</h3>
-      <p>A monthly subscription that includes the Strider hardware, software updates, and remote support. Ideal for clinics or short-term rehab programs.</p>
+      <h3>1. Robotics-as-a-Service (RaaS)</h3>
+      <p>A monthly subscription including the exoskeleton, support, and remote updates. Perfect for short-term rehab settings or trials.</p>
     </div>
 
     <div class="card">
-      <h3>Model 2: Direct Purchase</h3>
-      <p>One-time purchase of the Strider with optional extended warranty and training packages. Suitable for institutions and long-term users.</p>
+      <h3>2. Direct Purchase</h3>
+      <p>Outright purchase model with extended service contracts. Ideal for hospitals or rehab centers investing in long-term use.</p>
     </div>
 
     <div class="card">
-      <h3>Model 3: Community Lease-to-Own</h3>
-      <p>Users lease the device for 6 to 12 months with the option to apply payments toward a final purchase. Designed for at-home use post-discharge.</p>
+      <h3>3. Lease-to-Own (Community Access)</h3>
+      <p>A lease model for patients discharged from rehab, with monthly payments that apply toward ownership. Designed for home-based recovery.</p>
     </div>
 
-    <p class="disclaimer">Pricing models are conceptual only. The device cannot be sold, leased, or distributed until FDA clearance is granted.</p>
+    <p class="disclaimer">Pricing models are not active. The product is not cleared by the FDA and cannot be purchased, leased, or distributed until authorized.</p>
   </section>
 
   <section class="section" id="contact">
     <h2>Get Involved</h2>
     <div class="card">
-      <p>We are looking for stroke survivors, therapists, and researchers to help us shape the future of mobility.</p>
-      <p><strong>Email us:</strong> <a href="mailto:info@stridebionics.com">info@stridebionics.com</a></p>
-      <p><strong>Join our waitlist or request a demo (post-clearance):</strong> Coming soon.</p>
-      <p class="disclaimer">Note: This is a pre-commercial research device. It is not FDA cleared for sale or clinical use.</p>
+      <p>We are currently seeking pilot sites, PTs, and stroke survivors for feedback and future trials. Want to be the first to hear when we launch?</p>
+      <p><strong>Email:</strong> <a href="mailto:info@stridebionics.com">info@stridebionics.com</a></p>
+      <p><strong>Join our early access waitlist:</strong> Coming soon.</p>
+      <p class="disclaimer">This is a non-commercial, non-FDA-cleared research device at this time.</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Stride Bionics. All rights reserved.</p>
-    <p><strong>Disclaimer:</strong> The Strider device is currently under development and has not been cleared by the U.S. Food and Drug Administration. It may not be sold, leased, or marketed until regulatory authorization is obtained.</p>
+    <p>&copy; 2025 Stride Bionics. All rights reserved.</p>
+    <p><strong>Disclaimer:</strong> Strider is an investigational device and is not yet FDA cleared for commercial sale, lease, or clinical use.</p>
   </footer>
 
 </body>
